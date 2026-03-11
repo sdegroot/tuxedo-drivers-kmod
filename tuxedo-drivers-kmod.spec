@@ -4,7 +4,7 @@
 %endif
 
 Name:     tuxedo-drivers-kmod
-Version:  4.17.0
+Version:  4.21.0
 Release:  1%{?dist}
 Summary:  Tuxedo drivers as kmod
 License:  GPL-2.0-or-later
@@ -51,22 +51,22 @@ done
 
 # Copy configs
 mkdir -p %{buildroot}/usr/lib/modprobe.d/
-cp usr/lib/modprobe.d/tuxedo-drivers-backlist-upstream-conflicts.conf %{buildroot}/usr/lib/modprobe.d/
+cp files/usr/lib/modprobe.d/tuxedo-drivers-backlist-upstream-conflicts.conf %{buildroot}/usr/lib/modprobe.d/
 
 # Copy udev rules
 mkdir -p %{buildroot}/usr/lib/udev/rules.d/
-cp usr/lib/udev/rules.d/99-tuxedo-fix-systemd-led-bootdelay.rules %{buildroot}/usr/lib/udev/rules.d/
-cp usr/lib/udev/rules.d/99-tuxedo-fix-infinity-flex-touchpanel-toggle.rules %{buildroot}/usr/lib/udev/rules.d/
-cp usr/lib/udev/rules.d/99-tuxedo-fix-nb02-touchpad-mouse.rules %{buildroot}/usr/lib/udev/rules.d/
-cp usr/lib/udev/rules.d/99-tuxedo-fix-huawei-lte-modules-correct-drivers.rules %{buildroot}/usr/lib/udev/rules.d/
-cp usr/lib/udev/rules.d/99-tuxedo-fix-intel-gen13-sleep-state.rules %{buildroot}/usr/lib/udev/rules.d/
-cp usr/lib/udev/rules.d/99-tuxedo-fix-pulse-gen2-wakeup-through-nvme-controller.rules %{buildroot}/usr/lib/udev/rules.d/
-cp usr/lib/udev/rules.d/99-tuxedo-fix-realtek-rts522a-idle-behaviour.rules %{buildroot}/usr/lib/udev/rules.d/
+cp files/usr/lib/udev/rules.d/99-tuxedo-fix-systemd-led-bootdelay.rules %{buildroot}/usr/lib/udev/rules.d/
+cp files/usr/lib/udev/rules.d/99-tuxedo-fix-infinity-flex-touchpanel-toggle.rules %{buildroot}/usr/lib/udev/rules.d/
+cp files/usr/lib/udev/rules.d/99-tuxedo-fix-nb02-touchpad-mouse.rules %{buildroot}/usr/lib/udev/rules.d/
+cp files/usr/lib/udev/rules.d/99-tuxedo-fix-huawei-lte-modules-correct-drivers.rules %{buildroot}/usr/lib/udev/rules.d/
+cp files/usr/lib/udev/rules.d/99-tuxedo-fix-intel-gen13-sleep-state.rules %{buildroot}/usr/lib/udev/rules.d/
+cp files/usr/lib/udev/rules.d/99-tuxedo-fix-pulse-gen2-wakeup-through-nvme-controller.rules %{buildroot}/usr/lib/udev/rules.d/
+cp files/usr/lib/udev/rules.d/99-tuxedo-fix-realtek-rts522a-idle-behaviour.rules %{buildroot}/usr/lib/udev/rules.d/
 
 # Copy udev hwdb
 mkdir -p %{buildroot}/usr/lib/udev/hwdb.d/
-cp usr/lib/udev/hwdb.d/61-sensor-tuxedo.hwdb %{buildroot}/usr/lib/udev/hwdb.d/
-cp usr/lib/udev/hwdb.d/61-keyboard-tuxedo.hwdb %{buildroot}/usr/lib/udev/hwdb.d/
+cp files/usr/lib/udev/hwdb.d/61-sensor-tuxedo.hwdb %{buildroot}/usr/lib/udev/hwdb.d/
+cp files/usr/lib/udev/hwdb.d/61-keyboard-tuxedo.hwdb %{buildroot}/usr/lib/udev/hwdb.d/
 
 %{?akmod_install}
 
@@ -81,7 +81,6 @@ cp usr/lib/udev/hwdb.d/61-keyboard-tuxedo.hwdb %{buildroot}/usr/lib/udev/hwdb.d/
 /usr/lib/udev/hwdb.d/61-sensor-tuxedo.hwdb
 /usr/lib/udev/hwdb.d/61-keyboard-tuxedo.hwdb
 %doc README.md
-%license debian/copyright
 
 /usr/lib/modprobe.d/tuxedo-drivers-backlist-upstream-conflicts.conf
 
